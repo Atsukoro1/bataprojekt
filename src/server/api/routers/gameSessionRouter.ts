@@ -1,6 +1,6 @@
-import { prisma } from "@/server/db";
-import { createTRPCRouter, protectedProcedure } from "../trpc";
 import { bumpGameSessionSchema, createGameSessionSchema } from "../schemas/gameSessionSchema";
+import { createTRPCRouter, protectedProcedure } from "../trpc";
+import { prisma } from "@/server/db";
 
 export const gameSessionRouter = createTRPCRouter({
     createSession: protectedProcedure

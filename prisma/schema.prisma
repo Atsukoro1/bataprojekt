@@ -8,9 +8,10 @@ datasource db {
 }
 
 model GameSession {
-    userId  String  @unique
-    user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
-    stage   Int     @default(1)
+    userId  String      @unique
+    user    User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+    stage   Int         @default(1)
+    started DateTime    @default(now())
 }
 
 model Score {
@@ -54,7 +55,7 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
-    
+
     gameSession  GameSession?
     scores       Score[]
 }

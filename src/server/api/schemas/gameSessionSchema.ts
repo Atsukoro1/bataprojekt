@@ -14,9 +14,8 @@ export const bumpGameSessionSchema = {
     output: z.object({
         success: z
             .boolean(),
-        data: z
-            .number()
-            .optional(),
+        stage: z.number(),
+        finished: z.boolean(),
         errorMessage: z
             .string()
             .optional()
