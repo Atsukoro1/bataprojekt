@@ -10,6 +10,8 @@ export const createGameSessionSchema = {
     })
 }
 
+export type CreateGameSessionSchemaOutput = typeof createGameSessionSchema.output._input;
+
 export const bumpGameSessionSchema = {
     output: z.object({
         success: z
@@ -21,3 +23,5 @@ export const bumpGameSessionSchema = {
             .optional()
     })
 }
+
+export type BumpGameSessionSchemaOutput = typeof bumpGameSessionSchema.output._input;
