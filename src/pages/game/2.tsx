@@ -9,7 +9,7 @@ export default () => {
     const [progress, setProgress] = useState<number>(0);
 
     const nextGame = () => {
-        Router.push("/game/2");
+        Router.push("/game/3");
     };
 
     const content = useMemo(() => {
@@ -25,10 +25,8 @@ export default () => {
             case 1:
                 return (
                     <QrCodeScanner
-                        questNumber={1}
-                        onResult={(e) => {
-                            setProgress(progress + 1);
-                        }}
+                        questNumber={2}
+                        onResult={(e) => { setProgress(progress + 1) }}
                         open={true}
                     />
                 )
@@ -49,7 +47,7 @@ export default () => {
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20">
-                <h1 className="text-white text-lg mb-3">Stanoviště 1</h1>
+                <h1 className="text-white text-lg mb-3">Stanoviště 2</h1>
                 
                 {content}
             </div>

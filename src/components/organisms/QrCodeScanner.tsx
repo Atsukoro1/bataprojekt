@@ -3,10 +3,11 @@ import { useMemo } from "react";
 
 type CodeReaderProps = {
 	onResult: (value: string) => void;
+	questNumber: number;
 	open: boolean;
 };
 
-const QrCodeScanner = ({ onResult, open }: CodeReaderProps) => {
+const QrCodeScanner = ({ onResult, open, questNumber }: CodeReaderProps) => {
 	const visible = useMemo(() => open, [open]);
 
 	return (
@@ -21,13 +22,21 @@ const QrCodeScanner = ({ onResult, open }: CodeReaderProps) => {
             <button onClick={() => onResult("df")}>Next</button>
 
 			<QrScanner
-				onResult={(result) => onResult(result.getText())}
+				onResult={(result) => {
+					const text = result.getText();
+
+					if(parseInt(text) === questNumber) {
+						onResult(result.getText())
+					} else {
+						alert("nah");
+					}
+				}}
 				onError={(error) => {
 					console.log(error);
 				}}
 				constraints={{
 					facingMode: "environment",
-					aspectRatio: { min: 1, max: 1 },
+					aspectRatio: { min: 0.5, max: 1 },
 				}}
 				scanDelay={1000}
 			/>
