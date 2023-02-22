@@ -3,6 +3,7 @@ import { getProviders, signIn } from "next-auth/react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/server/auth";
 import Head from "next/head";
+import DiscordProviderButton from "@/components/molecules/auth-provider-buttons/Discord";
 
 export default ({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 	return (
@@ -22,11 +23,8 @@ export default ({ providers }: InferGetServerSidePropsType<typeof getServerSideP
           <div className="flex flex-row gap-3">
             {Object.values(providers).map((provider) => (
               <div key={provider.name}>
-                <button 
-                  onClick={() => signIn(provider.id)}
-                  className={"bg-slate-900 p-3 rounded-lg text-white"}
-                >
-                  Přihlaš se přes {provider.name}
+                <button onClick={() => signIn(provider.id)}>
+                  <DiscordProviderButton/>
                 </button>
               </div>
             ))}
