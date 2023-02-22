@@ -2,6 +2,16 @@ import { Session } from "next-auth"
 import { BumpGameSessionSchemaOutput, CreateGameSessionSchemaOutput } from "../schemas/gameSessionSchema"
 import { prisma } from "@/server/db";
 
+export const getGameSessionService = async (
+    { session }: { session: Session | null }
+) => {
+    return await prisma.gameSession.findFirst({
+        where: {
+            userId: session?.user.id
+        }
+    });
+}
+
 export const createGameSessionService = async (
     { session }: { session: Session | null }
 ): Promise<CreateGameSessionSchemaOutput> => {

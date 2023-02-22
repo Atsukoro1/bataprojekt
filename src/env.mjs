@@ -21,7 +21,10 @@ const server = z.object({
   DISCORD_CLIENT_SECRET: z.string(),
 
   GITHUB_CLIENT_ID: z.string(),
-  GITHUB_CLIENT_SECRET: z.string()
+  GITHUB_CLIENT_SECRET: z.string(),
+
+  GOOGLE_CLIENT_ID: z.string(),
+  GOOGLE_SECRET_KEY: z.string()
 });
 
 const client = z.object({
@@ -42,7 +45,9 @@ const processEnv = {
   DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
   DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
   GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID,
-  GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET
+  GITHUB_CLIENT_SECRET: process.env.GITHUB_CLIENT_SECRET,
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+  GOOGLE_SECRET_KEY: process.env.GOOGLE_SECRET_KEY
 };
 
 // Don't touch the part below

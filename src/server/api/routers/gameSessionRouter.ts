@@ -1,10 +1,10 @@
 import { bumpGameSessionSchema, createGameSessionSchema } from "../schemas/gameSessionSchema";
-import { bumpGameSessionService, createGameSessionService } from "../services/gameSession";
+import { bumpGameSessionService, createGameSessionService, getGameSessionService } from "../services/gameSession";
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const gameSessionRouter = createTRPCRouter({
     createSession: protectedProcedure
-        .input(createGameSessionSchema.output)
+        .output(createGameSessionSchema.output)
         .mutation(async ({ ctx }) => {
             return createGameSessionService(ctx);
         }),
@@ -14,4 +14,9 @@ export const gameSessionRouter = createTRPCRouter({
         .mutation(async ({ ctx }) => {
             return bumpGameSessionService(ctx);
         }),
+
+    fetchSession: protectedProcedure
+        .query(({ ctx }) => {
+            return getGameSessionService(ctx);
+        })
 });
