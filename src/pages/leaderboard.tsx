@@ -1,4 +1,4 @@
-import LeaderBoardItem from "@/components/organisms/LeaderBoardItem"
+import LeaderboardItem from "@/components/organisms/LeaderBoardItem"
 
 export default () => {
     return (
@@ -10,7 +10,7 @@ export default () => {
                 </p>
 
                 <div className="mt-5 grid grid-cols-1 gap-4">
-                    <LeaderBoardItem
+                    <LeaderboardItem
                         userImage="https://avatars.githubusercontent.com/u/64079894?s=60&v=4"
                         username="Atsukoro1"
                         place={1}

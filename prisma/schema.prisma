@@ -7,6 +7,19 @@ datasource db {
     url      = "postgresql://postgres:nanahirajemujbuh@db.mljuteltvijferjmswsx.supabase.co/postgres"
 }
 
+model GameSession {
+    userId  String  @unique
+    user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+    stage   Int     @default(1)
+}
+
+model Score {
+    id      String  @id @default(cuid())
+    userId  String  @unique
+    user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+    time    BigInt
+}
+
 model Account {
     id                String  @id @default(cuid())
     userId            String
@@ -41,6 +54,9 @@ model User {
     image         String?
     accounts      Account[]
     sessions      Session[]
+    
+    gameSession  GameSession?
+    scores       Score[]
 }
 
 model VerificationToken {
