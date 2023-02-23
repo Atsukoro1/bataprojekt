@@ -37,11 +37,12 @@ const Section4 = () => {
                 )
 
             case 2:
-                <ContentImage
-                    onInnerClose={() => setProgress(progress + 1)}
-                    imageSrc="https://via.placeholder.com/300"
-                />
-                break;
+                return (
+                    <ContentImage
+                        onInnerClose={() => setProgress(progress + 1)}
+                        imageSrc="https://via.placeholder.com/300"
+                    />
+                )
 
             default:
                 return (
