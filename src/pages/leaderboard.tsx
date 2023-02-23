@@ -37,7 +37,11 @@ export async function getServerSideProps() {
     const scores = await prisma.score.findMany({
         include: {
             user: true
-        }
+        },
+        orderBy: {
+            time: 'asc'
+        },
+        take: 10
     });
 
     return {

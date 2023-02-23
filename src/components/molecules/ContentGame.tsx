@@ -7,7 +7,8 @@ type ContentGameProps = {
     frameworkUrl: string;
     codeUrl: string;
     code: string;
-    onInnerClose: () => void;
+    onSuccess: () => void;
+    onFail: () => void;
 }
 
 const ContentGame = ({
@@ -16,7 +17,8 @@ const ContentGame = ({
     frameworkUrl,
     codeUrl,
     code,
-    onInnerClose
+    onSuccess,
+    onFail
 }: ContentGameProps) => {
     const [inputCode, setInputCode] = useState<string>("");
 
@@ -29,9 +31,9 @@ const ContentGame = ({
 
     const onCodeSubmit = () => {
         if(code.localeCompare(inputCode) === 0) {
-            onInnerClose();
+            onSuccess();
         } else {
-            alert("Spatnej code so bad");
+            onFail();
         }
     }
 

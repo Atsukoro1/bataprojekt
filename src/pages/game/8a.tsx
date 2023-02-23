@@ -7,11 +7,11 @@ import { api } from "@/utils/api";
 import ContentImage from "@/components/molecules/ContentImage";
 
 const Section4 = () => {
-    const bumpStage = api.gameSession.bumpStage.useMutation();
+    const dumpStage = api.gameSession.dumpStage.useMutation();
     const [progress, setProgress] = useState<number>(0);
 
-    const nextGame = async () => {
-        await bumpStage.mutateAsync();
+    const previousGame = async () => {
+        await dumpStage.mutateAsync();
         await Router.push("/game/7");
     };
 
@@ -48,7 +48,7 @@ const Section4 = () => {
                     <ContentFinal
                         title="Neúspěch"
                         subtitle="Vrátit se na stanoviště 7"
-                        onInnerClose={nextGame}
+                        onInnerClose={previousGame}
                     />
                 )
         }

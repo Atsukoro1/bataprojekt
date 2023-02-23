@@ -1,9 +1,9 @@
 import QrCodeScanner from "@/components/organisms/QrCodeScanner";
 import ContentVideo from "@/components/molecules/ContentVideo";
-import ContentFinal from "@/components/molecules/ContentFinal";
 import { useMemo, useState } from "react";
 import Router from "next/router";
 import { api } from "@/utils/api";
+import ContentGame from "@/components/molecules/ContentGame";
 
 const Section10 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -13,6 +13,11 @@ const Section10 = () => {
         await bumpStage.mutateAsync();
         await Router.push("/game/congrats");
     };
+
+    const failGame = async () => {
+        await bumpStage.mutateAsync();
+        await Router.push("/game/gameover");
+    }
 
     const content = useMemo(() => {
         switch (progress) {
@@ -36,10 +41,14 @@ const Section10 = () => {
 
             default:
                 return (
-                    <ContentFinal
-                        title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 10 stanoviste, klikněte na tlačítko a pokračujte dále"
-                        onInnerClose={nextGame}
+                    <ContentGame
+                        loaderUrl="/games/keypair/thing.loader.js"
+                        dataUrl="/games/keypair/thing.data"
+                        frameworkUrl="/games/keypair/thing.framework.js"
+                        codeUrl="/games/keypair/thing.wasm"
+                        code="elpoepyagevoli"
+                        onFail={nextGame}
+                        onSuccess={failGame}
                     />
                 )
         }
