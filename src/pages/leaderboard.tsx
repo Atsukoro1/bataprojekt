@@ -1,4 +1,4 @@
-import LeaderboardItem from "@/components/organisms/LeaderboardItem"
+import LeaderboardItem from "@/components/organisms/LeaderBoardItem"
 
 export default () => {
     return (
