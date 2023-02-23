@@ -47,8 +47,8 @@ const Section10 = () => {
                         frameworkUrl="/games/keypair/thing.framework.js"
                         codeUrl="/games/keypair/thing.wasm"
                         code="elpoepyagevoli"
-                        onFail={nextGame}
-                        onSuccess={failGame}
+                        onFail={failGame}
+                        onSuccess={nextGame}
                     />
                 )
         }
