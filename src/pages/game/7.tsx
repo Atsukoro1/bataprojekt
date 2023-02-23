@@ -5,6 +5,7 @@ import Router from "next/router";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
 import ContentImage from "@/components/molecules/ContentImage";
+import ContentChoices from "@/components/molecules/ContentChoices";
 
 const Section4 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -21,7 +22,7 @@ const Section4 = () => {
                 return (
                     <QrCodeScanner
                         questNumber={7}
-                        subtitle="Naskenuj QR kod z sesteho stanoviště"
+                        subtitle="Naskenuj QR kod na sedmém stanovišti"
                         onResult={() => { setProgress(progress + 1) }}
                         open={true}
                     />
@@ -45,10 +46,18 @@ const Section4 = () => {
 
             default:
                 return (
-                    <ContentFinal
-                        title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 7 kapitolu, klikněte na tlačítko a pokračujte dále"
-                        onInnerClose={nextGame}
+                    <ContentChoices
+                        title="Máte na výběr"
+                        subtitle="Vyberte jednu z možností"
+                        choice1Text="Stanoviště 8A"
+                        choice2Text="Stanoviště 8B"
+                        onChoice={(num: number) => {
+                            if(num === 1) {
+                                Router.push("/game/8a");
+                            } else {
+                                Router.push("/game/8b")
+                            }
+                        }}
                     />
                 )
         }

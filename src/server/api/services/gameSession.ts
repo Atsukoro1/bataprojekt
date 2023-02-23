@@ -2,7 +2,8 @@ import { Session } from "next-auth"
 import { prisma } from "@/server/db";
 import type { 
     BumpGameSessionSchemaOutput, 
-    CreateGameSessionSchemaOutput 
+    CreateGameSessionSchemaOutput, 
+    DumpGameSessionSchemaOutput
 } from "../schemas/gameSessionSchema"
 
 export const getGameSessionService = async (
@@ -41,6 +42,41 @@ export const createGameSessionService = async (
         success: true
     };
 }
+
+export const dumpGameSessionService = async (
+    { session }: { session: Session | null }
+): Promise<DumpGameSessionSchemaOutput> => {
+    const found = await prisma.gameSession.findFirst({
+        where: {
+            userId: session?.user.id
+        }
+    });
+
+    if(!found) {
+        return {
+            success: false,
+            errorMessage: "Nemohli jsme tento session najit",
+            stage: 0
+        };
+    };
+
+    const updated = await prisma.gameSession.update({
+        where: {
+            userId: session?.user.id
+        },
+        data: {
+            stage: {
+                decrement: 1
+            }
+        }
+    });
+
+    return {
+        success: true,
+        stage: updated.stage,
+        errorMessage: undefined
+    };
+};
 
 export const bumpGameSessionService = async (
     { session }: { session: Session | null }

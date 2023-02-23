@@ -32,9 +32,9 @@ const IndexPage = () => {
 
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
-            <div className="mt-20">
-                <h1 className='text-white'>Vítáme tě!</h1>
-                <p className='text-white'>
+            <div className="m-5">
+                <h1 className='text-white mb-3 text-xl font-bold'>Vítáme tě!</h1>
+                <p className='text-white mb-5'>
                     Právě jsi dostal možnost zahrát si únikovou hru.
                     Tato hra byla vytvořena studenty 3. ročníku multimediální školy, ve Zlíně.
                     <br /><br />

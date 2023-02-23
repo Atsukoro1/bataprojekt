@@ -25,3 +25,17 @@ export const bumpGameSessionSchema = {
 }
 
 export type BumpGameSessionSchemaOutput = typeof bumpGameSessionSchema.output._input;
+
+export const dumpGameSessionSchema = {
+    output: z.object({
+        success: z
+            .boolean(),
+        stage: z
+            .number(),
+        errorMessage: z
+            .string()
+            .optional()
+    })
+}
+
+export type DumpGameSessionSchemaOutput = typeof dumpGameSessionSchema.output._input;

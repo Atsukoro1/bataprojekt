@@ -1,5 +1,5 @@
-import { bumpGameSessionSchema, createGameSessionSchema } from "../schemas/gameSessionSchema";
-import { bumpGameSessionService, createGameSessionService, getGameSessionService } from "../services/gameSession";
+import { bumpGameSessionSchema, createGameSessionSchema, dumpGameSessionSchema } from "../schemas/gameSessionSchema";
+import { bumpGameSessionService, createGameSessionService, dumpGameSessionService, getGameSessionService } from "../services/gameSession";
 import { createTRPCRouter, protectedProcedure } from "../trpc";
 
 export const gameSessionRouter = createTRPCRouter({
@@ -13,6 +13,12 @@ export const gameSessionRouter = createTRPCRouter({
         .output(bumpGameSessionSchema.output)
         .mutation(async ({ ctx }) => {
             return bumpGameSessionService(ctx);
+        }),
+
+    dumpStage: protectedProcedure
+        .output(dumpGameSessionSchema.output)
+        .mutation(async ({ ctx }) => {
+            return dumpGameSessionService(ctx);
         }),
 
     fetchSession: protectedProcedure

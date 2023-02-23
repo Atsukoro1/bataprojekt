@@ -22,7 +22,7 @@ const LeaderboardPage = ({ scores }: {
                             <LeaderboardItem
                                 userImage={el.user.image || ""}
                                 username={el.user.name || ""}
-                                place={key}
+                                place={key + 1}
                                 time={parseInt(el.time.toString())}
                             />
                         )

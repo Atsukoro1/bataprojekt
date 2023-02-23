@@ -12,7 +12,7 @@ const ContentFinal = ({
     subtitle 
 }: ContentFinalProps) => {
     return (
-        <div>
+        <div className="m-4">
             <h1 className="text-white text-lg">
                 {title}
             </h1>
