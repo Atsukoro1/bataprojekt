@@ -5,8 +5,8 @@ import Image from 'next/image';
 
 const IndexPage = () => {
     const createGameSession = api.gameSession.createSession.useMutation({
-        onSuccess: () => {
-            toast.success("Úspěšně jste vytvořili novou hru, přesměrovávání...")
+        onSuccess: (data) => {
+            toast.success("Úspěšně jste vytvořili novou hru, přesměrovávání...");
         },
 
         onError: (err) => {

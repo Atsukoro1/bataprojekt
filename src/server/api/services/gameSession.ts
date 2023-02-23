@@ -78,6 +78,22 @@ export const dumpGameSessionService = async (
     };
 };
 
+export const removeGameSessionService = async (
+    { session }: { session: Session | null }
+) => {
+    const deleted = await prisma.gameSession.delete({
+        where: {
+            userId: session?.user.id
+        }
+    });
+
+    if(deleted) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 export const bumpGameSessionService = async (
     { session }: { session: Session | null }
 ): Promise<BumpGameSessionSchemaOutput> => {

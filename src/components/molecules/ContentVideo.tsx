@@ -16,7 +16,8 @@ const ContentVideo = ({
                 url={videoSrc}
                 controls={false}
                 playing={true}
-                width={300}
+                width={340}
+                height={500}
             />
 
             <NextButton

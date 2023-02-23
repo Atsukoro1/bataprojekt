@@ -47,7 +47,7 @@ const Section4 = () => {
                 return (
                     <ContentFinal
                         title="Neúspěch"
-                        subtitle="Vrátit se na stanoviště 7"
+                        subtitle="Dáme ti ještě jednu šanci!"
                         onInnerClose={previousGame}
                     />
                 )

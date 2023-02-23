@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Ref, useRef, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 type ContentGameProps = {
@@ -7,8 +7,10 @@ type ContentGameProps = {
     frameworkUrl: string;
     codeUrl: string;
     code: string;
-    onSuccess: () => void;
-    onFail: () => void;
+    // rome-ignore lint/suspicious/noExplicitAny: <explanation>
+    onSuccess: (ref: any) => void;
+    // rome-ignore lint/suspicious/noExplicitAny: <explanation>
+    onFail: (ref: any) => void;
 }
 
 const ContentGame = ({
@@ -21,6 +23,7 @@ const ContentGame = ({
     onFail
 }: ContentGameProps) => {
     const [inputCode, setInputCode] = useState<string>("");
+    const containerRef = useRef(null);
 
     const { unityProvider } = useUnityContext({
         loaderUrl: loaderUrl,
@@ -30,16 +33,17 @@ const ContentGame = ({
     });
 
     const onCodeSubmit = () => {
-        if(code.localeCompare(inputCode) === 0) {
-            onSuccess();
+        if (code.localeCompare(inputCode) === 0) {
+            onSuccess(containerRef);
         } else {
-            onFail();
+            onFail(containerRef);
         }
     }
 
     return (
         <div>
             <Unity
+                ref={containerRef}
                 className="h-[430px] w-[330px]"
                 unityProvider={unityProvider}
             />
@@ -53,7 +57,7 @@ const ContentGame = ({
                     const validChar = /[a-zA-Z0-9]/;
                     const isBackspace = key === "Backspace";
 
-                    if(isBackspace) {
+                    if (isBackspace) {
                         setInputCode(prevState => prevState.slice(0, -1));
                     } else {
                         if (validChar.test(key) && key.length === 1) {
