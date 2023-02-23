@@ -1,10 +1,8 @@
-import ContentImage from "@/components/molecules/ContentImage";
-import ContentVideo from "@/components/molecules/ContentVideo";
 import QrCodeScanner from "@/components/organisms/QrCodeScanner";
+import ContentVideo from "@/components/molecules/ContentVideo";
+import ContentFinal from "@/components/molecules/ContentFinal";
 import { useMemo, useState } from "react";
 import Router from "next/router";
-import NextButton from "@/components/molecules/NextButton";
-import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
 
 const Section10 = () => {
@@ -13,7 +11,7 @@ const Section10 = () => {
 
     const nextGame = async () => {
         await bumpStage.mutateAsync();
-        await Router.push("/congrats");
+        await Router.push("/game/congrats");
     };
 
     const content = useMemo(() => {

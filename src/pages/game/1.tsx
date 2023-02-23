@@ -47,7 +47,7 @@ const Section1 = () => {
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20">
-                <h1 className="text-white text-lg mb-3">1 LOKACE</h1>
+                <h1 className="text-white text-lg mb-3">Stanoviště 1</h1>
                 <p>
                     Výborně, úspěšně jsi našel první lokaci!
                     Právě se nacházíš na začátku našeho případu, který dostal na starost detektiv Jonáš Červenka.

@@ -21,7 +21,7 @@ const config = {
     defaultLocale: "en",
   },
   images: {
-    domains: ["avatars.githubusercontent.com", "cdn.myshoptet.com"]
+    domains: ["avatars.githubusercontent.com", "via.placeholder.com"]
   }
 };
 export default config;

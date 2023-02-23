@@ -21,9 +21,9 @@ const QrCodeScanner = ({ onResult, open, questNumber, subtitle }: CodeReaderProp
 			</div>
 
 			{subtitle && (
-				<p className="text-white mt-1 mb-1 text-md">
+				<div className="text-center text-white text-xl font-bold mb-5">
 					{subtitle}
-				</p>
+				</div>
 			)}
 
 			<button onClick={() => onResult("df")}>Next</button>

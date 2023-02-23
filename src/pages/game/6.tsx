@@ -36,11 +36,12 @@ const Section4 = () => {
                 )
 
             case 2:
-                <ContentImage
-                    onInnerClose={() => setProgress(progress + 1)}
-                    imageSrc="https://cdn.myshoptet.com/usr/www.kartografie.cz/user/shop/big/2367-4_2367-svet-nastenna-obecne-zemepisna-mapa.jpg?621e11d2"
-                />
-                break;
+                return (
+                    <ContentImage
+                        onInnerClose={() => setProgress(progress + 1)}
+                        imageSrc="https://via.placeholder.com/300"
+                    />
+                )
 
             default:
                 return (
@@ -56,7 +57,7 @@ const Section4 = () => {
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20">
-                <h1 className="text-white text-lg mb-3">Stanoviště 3</h1>
+                <h1 className="text-white text-lg mb-3">Stanoviště 6</h1>
 
                 {content}
             </div>
