@@ -5,9 +5,10 @@ type CodeReaderProps = {
 	onResult: (value: string) => void;
 	questNumber: number;
 	open: boolean;
+	subtitle?: string;
 };
 
-const QrCodeScanner = ({ onResult, open, questNumber }: CodeReaderProps) => {
+const QrCodeScanner = ({ onResult, open, questNumber, subtitle }: CodeReaderProps) => {
 	const visible = useMemo(() => open, [open]);
 
 	return (
@@ -19,13 +20,19 @@ const QrCodeScanner = ({ onResult, open, questNumber }: CodeReaderProps) => {
 				Naskenujte QR kód
 			</div>
 
-            <button onClick={() => onResult("df")}>Next</button>
+			{subtitle && (
+				<p className="text-white mt-1 mb-1 text-md">
+					{subtitle}
+				</p>
+			)}
+
+			<button onClick={() => onResult("df")}>Next</button>
 
 			<QrScanner
 				onResult={(result) => {
 					const text = result.getText();
 
-					if(parseInt(text) === questNumber) {
+					if (parseInt(text) === questNumber) {
 						onResult(result.getText())
 					} else {
 						alert("nah");

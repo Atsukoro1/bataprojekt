@@ -12,7 +12,7 @@ const Section4 = () => {
 
     const nextGame = async () => {
         await bumpStage.mutateAsync();
-        await Router.push("/game/6");
+        await Router.push("/game/8");
     };
 
     const content = useMemo(() => {
@@ -20,8 +20,8 @@ const Section4 = () => {
             case 0:
                 return (
                     <QrCodeScanner
-                        questNumber={4}
-                        subtitle="Naskenuj QR kod z čtvrtého stanoviště"
+                        questNumber={6}
+                        subtitle="Naskenuj QR kod z sesteho stanoviště"
                         onResult={() => { setProgress(progress + 1) }}
                         open={true}
                     />
@@ -46,7 +46,7 @@ const Section4 = () => {
                 return (
                     <ContentFinal
                         title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 4 kapitolu, klikněte na tlačítko a pokračujte dále"
+                        subtitle="Úspěšně jste dokočili 7 kapitolu, klikněte na tlačítko a pokračujte dále"
                         onInnerClose={nextGame}
                     />
                 )
@@ -56,7 +56,7 @@ const Section4 = () => {
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20">
-                <h1 className="text-white text-lg mb-3">Stanoviště 3</h1>
+                <h1 className="text-white text-lg mb-3">Stanoviště 7</h1>
 
                 {content}
             </div>

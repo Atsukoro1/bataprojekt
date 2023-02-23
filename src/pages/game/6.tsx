@@ -12,7 +12,7 @@ const Section4 = () => {
 
     const nextGame = async () => {
         await bumpStage.mutateAsync();
-        await Router.push("/game/6");
+        await Router.push("/game/7");
     };
 
     const content = useMemo(() => {
@@ -20,8 +20,8 @@ const Section4 = () => {
             case 0:
                 return (
                     <QrCodeScanner
-                        questNumber={4}
-                        subtitle="Naskenuj QR kod z čtvrtého stanoviště"
+                        questNumber={6}
+                        subtitle="Naskenuj QR kod z pátého stanoviště"
                         onResult={() => { setProgress(progress + 1) }}
                         open={true}
                     />

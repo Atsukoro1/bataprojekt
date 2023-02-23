@@ -35,15 +35,6 @@ const Section2 = () => {
                     />
                 )
 
-            case 2:
-                return (
-                    <QrCodeScanner
-                        questNumber={2}
-                        onResult={() => { setProgress(progress + 1) }}
-                        open={true}
-                    />
-                )
-
             case 3:
                 return (
                     <ContentImage
