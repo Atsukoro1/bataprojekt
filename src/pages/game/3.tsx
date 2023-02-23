@@ -5,11 +5,14 @@ import { useMemo, useState } from "react";
 import Router from "next/router";
 import NextButton from "@/components/molecules/NextButton";
 import ContentFinal from "@/components/molecules/ContentFinal";
+import { api } from "@/utils/api";
 
 const Section3 = () => {
+    const bumpStage = api.gameSession.bumpStage.useMutation();
     const [progress, setProgress] = useState<number>(0);
 
     const nextGame = async () => {
+        await bumpStage.mutateAsync();
         await Router.push("/game/4");
     };
 
