@@ -1,6 +1,9 @@
 import { Session } from "next-auth"
-import { BumpGameSessionSchemaOutput, CreateGameSessionSchemaOutput } from "../schemas/gameSessionSchema"
 import { prisma } from "@/server/db";
+import type { 
+    BumpGameSessionSchemaOutput, 
+    CreateGameSessionSchemaOutput 
+} from "../schemas/gameSessionSchema"
 
 export const getGameSessionService = async (
     { session }: { session: Session | null }
@@ -55,7 +58,7 @@ export const bumpGameSessionService = async (
             stage: 0,
             errorMessage: "Tento GameSession neexistuje"
         }
-    };
+    }
 
     if(found.stage === 10) {
         await prisma.gameSession.delete({
@@ -76,7 +79,7 @@ export const bumpGameSessionService = async (
             finished: true,
             stage: 10
         }
-    };
+    }
 
     const updated = await prisma.gameSession.update({
         where: {

@@ -17,13 +17,7 @@ const LeaderboardItem = ({
 	return (
 		<div className="flex items-center p-4 bg-slate-900 rounded-lg shadow-sm">
 			<div
-				className={`
-                    ${place === 1 && "text-orange-300"} 
-                    ${place === 2 && "text-gray-200"}
-                    ${place === 3 && "text-amber-800"}
-                    ${![1, 2, 3].includes(place) && "text-slate-400"}
-                    w-5 text-lg font-medium text-gray-400
-                `}
+				className={"text-slate-400 w-5 text-lg font-medium"}
 			>
 				{`#${place}`}
 			</div>

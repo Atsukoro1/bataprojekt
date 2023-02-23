@@ -2,7 +2,7 @@ type NextButtonProps = {
     onClick: () => void;
 }
 
-export default ({ onClick }: NextButtonProps) => {
+const NextButton = ({ onClick }: NextButtonProps) => {
     return (
         <button 
             className="text-white p-3 bg-slate-600 mt-4 rounded-lg"
@@ -12,3 +12,5 @@ export default ({ onClick }: NextButtonProps) => {
         </button>
     )
 }
+
+export default NextButton;

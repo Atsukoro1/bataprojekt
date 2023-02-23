@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import { api } from "@/utils/api";
 import Router from 'next/router';
 
-export default () => {
+const IndexPage = () => {
     const createGameSession = api.gameSession.createSession.useMutation({
         onSuccess: () => {
             toast.success("Úspěšně jste vytvořili novou hru, přesměrovávání...")
@@ -15,7 +15,9 @@ export default () => {
 
     const gameSession = api.gameSession.fetchSession.useQuery(undefined, {
         onSuccess: (data) => {
-            Router.push(`/game/${data?.stage}`);
+            (async function() {
+                await Router.push(`/game/${data?.stage.toString()}`);
+            }());
         }
     });
 
@@ -48,3 +50,5 @@ export default () => {
         </main>
     )
 }
+
+export default IndexPage;

@@ -5,11 +5,11 @@ import { useMemo, useState } from "react";
 import Router from "next/router";
 import NextButton from "@/components/molecules/NextButton";
 
-export default () => {
+const Section2 = () => {
     const [progress, setProgress] = useState<number>(0);
 
-    const nextGame = () => {
-        Router.push("/game/3");
+    const nextGame = async () => {
+        await Router.push("/game/3");
     };
 
     const content = useMemo(() => {
@@ -26,7 +26,7 @@ export default () => {
                 return (
                     <QrCodeScanner
                         questNumber={2}
-                        onResult={(e) => { setProgress(progress + 1) }}
+                        onResult={() => { setProgress(progress + 1) }}
                         open={true}
                     />
                 )
@@ -54,3 +54,5 @@ export default () => {
         </main>
     )
 }
+
+export default Section2;
