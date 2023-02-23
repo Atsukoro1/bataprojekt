@@ -1,4 +1,4 @@
-import React, { Ref, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 type ContentGameProps = {
@@ -8,10 +8,8 @@ type ContentGameProps = {
     frameworkUrl: string;
     codeUrl: string;
     code: string;
-    // rome-ignore lint/suspicious/noExplicitAny: <explanation>
-    onSuccess: (ref: any) => void;
-    // rome-ignore lint/suspicious/noExplicitAny: <explanation>
-    onFail: (ref: any) => void;
+    onSuccess: () => void;
+    onFail: () => void;
 }
 
 const ContentGame = ({
@@ -25,7 +23,6 @@ const ContentGame = ({
     onFail
 }: ContentGameProps) => {
     const [inputCode, setInputCode] = useState<string>("");
-    const containerRef = useRef(null);
 
     const { unityProvider } = useUnityContext({
         loaderUrl: loaderUrl,
@@ -36,9 +33,9 @@ const ContentGame = ({
 
     const onCodeSubmit = () => {
         if (code.localeCompare(inputCode) === 0) {
-            onSuccess(containerRef);
+            onSuccess();
         } else {
-            onFail(containerRef);
+            onFail();
         }
     }
 
@@ -47,7 +44,6 @@ const ContentGame = ({
             <h1 className="text-white mb-2">{title}</h1>
 
             <Unity
-                ref={containerRef}
                 className="h-[430px] w-[330px]"
                 unityProvider={unityProvider}
             />

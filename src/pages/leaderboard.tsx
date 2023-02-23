@@ -20,6 +20,8 @@ const LeaderboardPage = ({ scores }: {
                     {scores.map((el, key) => {
                         return (
                             <LeaderboardItem
+                                // rome-ignore lint/suspicious/noArrayIndexKey:
+                                key={key}
                                 userImage={el.user.image || ""}
                                 username={el.user.name || ""}
                                 place={key + 1}

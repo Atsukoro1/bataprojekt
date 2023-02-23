@@ -57,7 +57,7 @@ const Section9 = () => {
                 return (
                     <ContentImage
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078416179296731136/10_2_konce.JPG?width=454&height=605"
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078427173049880586/na_kocni_9.JPG?width=454&height=605"
                     />
                 )
 

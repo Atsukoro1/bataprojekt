@@ -9,18 +9,14 @@ const Section10 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
     const [progress, setProgress] = useState<number>(0);
 
-    // rome-ignore lint/suspicious/noExplicitAny:
-    const nextGame = async (ref: any) => {
+    const nextGame = async () => {
         await bumpStage.mutateAsync();
         await Router.push("/game/congrats");
-        ref.current.removeChild(ref.current.children[0])
     };
 
-    // rome-ignore lint/suspicious/noExplicitAny:
-    const failGame = async (ref: any) => {
+    const failGame = async () => {
         await bumpStage.mutateAsync();
         await Router.push("/game/gameover");
-        ref.current.removeChild(ref.current.children[0])
     }
 
     const content = useMemo(() => {

@@ -7,6 +7,7 @@ const IndexPage = () => {
     const createGameSession = api.gameSession.createSession.useMutation({
         onSuccess: (data) => {
             toast.success("Úspěšně jste vytvořili novou hru, přesměrovávání...");
+            Router.push("/game/1");
         },
 
         onError: (err) => {
