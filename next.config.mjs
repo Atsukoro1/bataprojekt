@@ -21,7 +21,7 @@ const config = {
     defaultLocale: "en",
   },
   images: {
-    domains: ["avatars.githubusercontent.com", "via.placeholder.com"]
+    domains: ["avatars.githubusercontent.com", "via.placeholder.com", "cdn.discordapp.com"]
   }
 };
 export default config;

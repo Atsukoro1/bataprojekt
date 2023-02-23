@@ -1,6 +1,13 @@
 import LeaderboardItem from "@/components/organisms/LeaderBoardItem"
+import { prisma } from "@/server/db"
+import { api } from "@/utils/api"
+import { Score, User } from "@prisma/client"
 
-export default () => {
+const LeaderboardPage = ({ scores }: {
+    scores: (Score & {
+        user: User;
+    })[]
+}) => {
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20 items-center text-center">
@@ -10,14 +17,34 @@ export default () => {
                 </p>
 
                 <div className="mt-5 grid grid-cols-1 gap-4">
-                    <LeaderboardItem
-                        userImage="https://avatars.githubusercontent.com/u/64079894?s=60&v=4"
-                        username="Atsukoro1"
-                        place={1}
-                        time={34738743}
-                    />
+                    {scores.map((el, key) => {
+                        return (
+                            <LeaderboardItem
+                                userImage={el.user.image || ""}
+                                username={el.user.name || ""}
+                                place={key}
+                                time={parseInt(el.time.toString())}
+                            />
+                        )
+                    })}
                 </div>
             </div>
         </main>
     )
 }
+
+export async function getServerSideProps() {
+    const scores = await prisma.score.findMany({
+        include: {
+            user: true
+        }
+    });
+
+    return {
+        props: {
+            scores: JSON.parse(JSON.stringify(scores, (_, v) => typeof v === 'bigint' ? v.toString() : v))
+        },
+    }
+}
+
+export default LeaderboardPage;
