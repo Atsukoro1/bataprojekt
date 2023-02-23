@@ -29,6 +29,7 @@ specifiers:
   react-dom: 18.2.0
   react-player: ^2.11.2
   react-toastify: ^9.1.1
+  react-unity-webgl: ^9.4.0
   superjson: 1.9.1
   tailwindcss: ^3.2.0
   typescript: ^4.9.4
@@ -49,6 +50,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-player: 2.11.2_react@18.2.0
   react-toastify: 9.1.1_biqbaboplfbrettd7655fr4n2y
+  react-unity-webgl: 9.4.0_react@18.2.0
   superjson: 1.9.1
   zod: 3.20.6
 
@@ -2518,6 +2520,14 @@ packages:
       clsx: 1.2.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+    dev: false
+
+  /react-unity-webgl/9.4.0_react@18.2.0:
+    resolution: {integrity: sha512-0R/Z/SPAth1pKIaykgZrweASqt+Y0Sf+ToO8TuX/D1goExK6G3gmGIln7HZl/FXPva0Mz/75qLkYEZE23mdhAg==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      react: 18.2.0
     dev: false
 
   /react/18.2.0:
