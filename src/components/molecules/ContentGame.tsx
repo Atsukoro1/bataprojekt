@@ -21,39 +21,52 @@ const ContentGame = ({
     const [inputCode, setInputCode] = useState<string>("");
 
     const { unityProvider } = useUnityContext({
-        loaderUrl: "/games/keypair/thing.loader.js",
-        dataUrl: "/games/keypair/thing.data",
-        frameworkUrl: "/games/keypair/thing.framework.js",
-        codeUrl: "/games/keypair/thing.wasm",
+        loaderUrl: loaderUrl,
+        dataUrl: dataUrl,
+        frameworkUrl: frameworkUrl,
+        codeUrl: codeUrl
     });
 
     const onCodeSubmit = () => {
-        if(code === inputCode) {
+        if(code.localeCompare(inputCode) === 0) {
             onInnerClose();
         } else {
-            alert("So bad");
+            alert("Spatnej code so bad");
         }
     }
 
     return (
         <div>
-            <Unity 
-                className="h-[430px] w-[330px]" 
-                unityProvider={unityProvider} 
+            <Unity
+                className="h-[430px] w-[330px]"
+                unityProvider={unityProvider}
             />
 
-            <input 
-                className="bg-slate-600 border-slate-400 placeholder:text-slate-400 rounded-lg p-2"
-                type="text" 
+            <input
+                type="text"
+                placeholder="Kod ze hry"
+                className="border-slate-300 bg-slate-600 rounded-lg p-2"
+                onKeyDown={(event) => {
+                    const key = event.key;
+                    const validChar = /[a-zA-Z0-9]/;
+                    const isBackspace = key === "Backspace";
+
+                    if(isBackspace) {
+                        setInputCode(prevState => prevState.slice(0, -1));
+                    } else {
+                        if (validChar.test(key) && key.length === 1) {
+                            setInputCode(prevState => prevState + key);
+                        } else if (key === " ") {
+                            setInputCode(prevState => `${prevState} `);
+                        };
+                    }
+                }}
                 value={inputCode}
-                placeholder="Zadej kod"
-                onChange={(e) => setInputCode(e.target.value)}
             />
-            <br />
-            <button 
-                className="bg-slate-400 p-3 rounded-lg text-white mt-3"
-                onSubmit={onCodeSubmit}
 
+            <button
+                className="bg-slate-400 p-3 rounded-lg text-white mt-3"
+                onClick={onCodeSubmit}
             >
                 Odeslat kod
             </button>

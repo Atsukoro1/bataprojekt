@@ -6,6 +6,7 @@ import Router from "next/router";
 import NextButton from "@/components/molecules/NextButton";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
+import ContentGame from "@/components/molecules/ContentGame";
 
 const Section3 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -38,10 +39,18 @@ const Section3 = () => {
 
             case 2:
                 return (
-                    <ContentImage
+                    <ContentGame
+                        loaderUrl="/games/keypair/thing.loader.js"
+                        dataUrl="/games/keypair/thing.data"
+                        frameworkUrl="/games/keypair/thing.framework.js"
+                        codeUrl="/games/keypair/thing.wasm"
+                        code="elpoepyagevoli"
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
                     />
+                    // <ContentImage
+                    //     onInnerClose={() => setProgress(progress + 1)}
+                    //     imageSrc="https://via.placeholder.com/300"
+                    // />
                 )
 
             default:

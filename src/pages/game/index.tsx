@@ -16,9 +16,9 @@ const IndexPage = () => {
 
     const gameSession = api.gameSession.fetchSession.useQuery(undefined, {
         onSuccess: (data) => {
-            (async function () {
-                await Router.push(`/game/${data?.stage.toString()}`);
-            }());
+            if(data?.stage) {
+                Router.push(`/game/${data?.stage.toString()}`);
+            };
         }
     });
 

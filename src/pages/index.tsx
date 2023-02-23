@@ -3,6 +3,7 @@ import { getProviders, signIn } from "next-auth/react";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/server/auth";
 import Head from "next/head";
+import { prisma } from "@/server/db";
 
 export default ({ providers }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
 	return (
@@ -36,7 +37,11 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions);
 
   if (session) {
-    return { redirect: { destination: "/game" } };
+    return {
+      redirect: {
+        destination: '/game'
+      }
+    };
   }
 
   const providers = await getProviders();

@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import Router from "next/router";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
+import NextButton from "@/components/molecules/NextButton";
 
 const Section1 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -19,17 +20,29 @@ const Section1 = () => {
         switch (progress) {
             case 0:
                 return (
+                    <div>
+                        <p className="text-white mt-1 mb-1 table w-[300px]">
+                            Výborně, úspěšně jsi našel první lokaci!
+                            Právě se nacházíš na začátku našeho případu, který dostal na starost detektiv Jonáš Červenka.
+                        </p>
+
+                        <NextButton onClick={() => setProgress(progress + 1)}/>
+                    </div>
+                )
+
+            case 1:
+                return (
                     <ContentVideo
                         videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
 
-            case 1:
+            case 2:
                 return (
                     <ContentImage
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://cdn.myshoptet.com/usr/www.kartografie.cz/user/shop/big/2367-4_2367-svet-nastenna-obecne-zemepisna-mapa.jpg?621e11d2"
+                        imageSrc="https://via.placeholder.com/300"
                     />
                 )
 
@@ -48,10 +61,6 @@ const Section1 = () => {
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20">
                 <h1 className="text-white text-lg mb-3">Stanoviště 1</h1>
-                <p>
-                    Výborně, úspěšně jsi našel první lokaci!
-                    Právě se nacházíš na začátku našeho případu, který dostal na starost detektiv Jonáš Červenka.
-                </p>
 
                 {content}
             </div>
