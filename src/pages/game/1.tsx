@@ -38,20 +38,11 @@ const Section1 = () => {
                     />
                 )
 
-            case 2:
-                return (
-                    <ContentImage
-                        onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
-                    />
-                )
-
             default:
                 return (
-                    <ContentFinal
-                        title="Gratulujeme!"
-                        subtitle="Úspěšně jste dokončili tuto kapitolu. Klikněte na tlačítko a pokračujte na další."
+                    <ContentImage
                         onInnerClose={nextGame}
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078414012099866764/Pozice_stanoviste_2.jpg?width=704&height=330"
                     />
                 )
         }

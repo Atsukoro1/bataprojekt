@@ -15,7 +15,7 @@ const ContentImage = ({
             <Image 
                 src={{
                     src: imageSrc,
-                    height: 230,
+                    height: 430,
                     width: 300
                 }}
                 alt="Content Image"

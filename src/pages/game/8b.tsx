@@ -5,6 +5,7 @@ import Router from "next/router";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
 import ContentImage from "@/components/molecules/ContentImage";
+import ContentText from "@/components/molecules/ContentText";
 
 const Section4 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -29,8 +30,8 @@ const Section4 = () => {
 
             case 1:
                 return (
-                    <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
+                    <ContentText
+                        text="Hm… vypadá to, že kancelář je zamknutá. Bohužel jsi se zdržel/a a k tvému finálnímu času musíme přičíst + 2 minuty. Nezbývá ti nic jiného, než se vydat hledat další stanoviště. "
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
@@ -39,7 +40,7 @@ const Section4 = () => {
                 return (
                     <ContentImage
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078419513101516850/9.JPG?width=454&height=605"
                     />
                 )
 

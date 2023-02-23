@@ -2,6 +2,7 @@ import React, { Ref, useRef, useState } from "react";
 import { Unity, useUnityContext } from "react-unity-webgl";
 
 type ContentGameProps = {
+    title: string;
     loaderUrl: string;
     dataUrl: string;
     frameworkUrl: string;
@@ -14,6 +15,7 @@ type ContentGameProps = {
 }
 
 const ContentGame = ({
+    title,
     loaderUrl,
     dataUrl,
     frameworkUrl,
@@ -42,6 +44,8 @@ const ContentGame = ({
 
     return (
         <div>
+            <h1 className="text-white mb-2">{title}</h1>
+
             <Unity
                 ref={containerRef}
                 className="h-[430px] w-[330px]"

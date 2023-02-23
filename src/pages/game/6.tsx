@@ -5,6 +5,7 @@ import Router from "next/router";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
 import ContentImage from "@/components/molecules/ContentImage";
+import ContentText from "@/components/molecules/ContentText";
 
 const Section4 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -26,8 +27,16 @@ const Section4 = () => {
                         open={true}
                     />
                 )
-
+            
             case 1:
+                return (
+                    <ContentText
+                        text="Úspěšně jsi dorazil/a k další lokaci!"
+                        onInnerClose={() => setProgress(progress + 1)}
+                    />
+                )
+
+            case 2:
                 return (
                     <ContentVideo
                         videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
@@ -35,11 +44,11 @@ const Section4 = () => {
                     />
                 )
 
-            case 2:
+            case 3:
                 return (
                     <ContentImage
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078417838647300186/na_konci_6.JPG?width=454&height=605"
                     />
                 )
 
@@ -47,7 +56,7 @@ const Section4 = () => {
                 return (
                     <ContentFinal
                         title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 4 kapitolu, klikněte na tlačítko a pokračujte dále"
+                        subtitle="Úspěšně jste dokočili 6 kapitolu, klikněte na tlačítko a pokračujte dále"
                         onInnerClose={nextGame}
                     />
                 )

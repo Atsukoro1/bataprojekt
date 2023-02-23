@@ -35,17 +35,10 @@ const Section10 = () => {
                     />
                 )
 
-            case 1:
-                return (
-                    <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
-                        onInnerClose={() => setProgress(progress + 1)}
-                    />
-                )
-
             default:
                 return (
                     <ContentGame
+                        title="Rychle si vzpomeň na velikost boty  našeho detektiva a dané číslo zadej tak, aby vycházelo na 9 políček."
                         loaderUrl="/games/keypair/thing.loader.js"
                         dataUrl="/games/keypair/thing.data"
                         frameworkUrl="/games/keypair/thing.framework.js"

@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import Router from "next/router";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
+import ContentText from "@/components/molecules/ContentText";
 
 const Section3 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -30,25 +31,24 @@ const Section3 = () => {
             case 1:
                 return (
                     <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
+                        videoSrc="https://www.youtube.com/watch?v=hce1J2JWT04"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
 
             case 2:
                 return (
-                    <ContentImage
+                    <ContentText
+                        text="Tak jo, a teď hurá až do pátého patra, kde se nachází další QR kód."
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
                     />
                 )
 
             default:
                 return (
-                    <ContentFinal
-                        title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 3 kapitolu, klikněte na tlačítko a pokračujte dále"
+                    <ContentImage
                         onInnerClose={nextGame}
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078418826556874822/10_2_konce.JPG?width=454&height=605"
                     />
                 )
         }

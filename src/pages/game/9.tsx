@@ -6,6 +6,7 @@ import Router from "next/router";
 import NextButton from "@/components/molecules/NextButton";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
+import ContentText from "@/components/molecules/ContentText";
 
 const Section9 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -30,17 +31,33 @@ const Section9 = () => {
 
             case 1:
                 return (
-                    <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
+                    <ContentText
+                        text="Hm… už tě napadá kdo by mohl být vrahem Pana Potopy?"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
 
             case 2:
                 return (
+                    <ContentVideo
+                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
+                        onInnerClose={() => setProgress(progress + 1)}
+                    />
+                )
+
+            case 3:
+                return (
+                    <ContentText
+                        text="Tak to nikdo nemohl čekat! Měl/a by jsi co nejrychleji najít poslední stanoviště, abys mohl/a z budovy uniknout! "
+                        onInnerClose={() => setProgress(progress + 1)}
+                    />
+                )
+
+            case 4:
+                return (
                     <ContentImage
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078416179296731136/10_2_konce.JPG?width=454&height=605"
                     />
                 )
 

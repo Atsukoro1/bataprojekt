@@ -5,6 +5,7 @@ import Router from "next/router";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
 import ContentImage from "@/components/molecules/ContentImage";
+import ContentText from "@/components/molecules/ContentText";
 
 const Section4 = () => {
     const dumpStage = api.gameSession.dumpStage.useMutation();
@@ -29,17 +30,17 @@ const Section4 = () => {
 
             case 1:
                 return (
-                    <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
+                    <ContentText
+                        text="Snad toto byla správná volba, jsi si jistý, že je pravý čas na to utéct?"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
 
             case 2:
                 return (
-                    <ContentImage
+                    <ContentVideo
+                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
                     />
                 )
 

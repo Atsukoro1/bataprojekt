@@ -6,6 +6,7 @@ import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
 import ContentImage from "@/components/molecules/ContentImage";
 import ContentChoices from "@/components/molecules/ContentChoices";
+import ContentText from "@/components/molecules/ContentText";
 
 const Section4 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -30,17 +31,17 @@ const Section4 = () => {
 
             case 1:
                 return (
-                    <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
+                    <ContentText
+                        text="Měl jsi teď chvíli se po budově porozhlédnout sám. Myslím si, že pro pátrání to byl důležitý krok!"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
 
             case 2:
                 return (
-                    <ContentImage
+                    <ContentVideo
+                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
                     />
                 )
 

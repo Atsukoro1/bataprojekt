@@ -5,6 +5,7 @@ import Router from "next/router";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
 import ContentImage from "@/components/molecules/ContentImage";
+import ContentText from "@/components/molecules/ContentText";
 
 const Section4 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -36,12 +37,12 @@ const Section4 = () => {
                 )
 
             case 2:
-               return (
-                <ContentImage
-                    onInnerClose={() => setProgress(progress + 1)}
-                    imageSrc="https://via.placeholder.com/300"
-                />
-               )
+                return (
+                    <ContentText
+                        text="Jsi připravený/á na další lokaci?"
+                        onInnerClose={() => setProgress(progress + 1)}
+                    />
+                )
 
             default:
                 return (

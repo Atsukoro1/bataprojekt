@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import Router from "next/router";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
+import ContentText from "@/components/molecules/ContentText";
 
 const Section2 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -29,6 +30,14 @@ const Section2 = () => {
 
             case 1:
                 return (
+                    <ContentText
+                        text="Vidím, že tě náš příběh zaujal! Nyní už se nacházíme před samotnou budovou, kde jsme dostali typ na podezřelé. Pojďme se společně nechat provést celou Budovou 44. Snad se dozvíme více informací od našeho průvodce…"
+                        onInnerClose={() => setProgress(progress + 1)}
+                    />
+                )
+
+            case 2:
+                return (
                     <ContentVideo
                         videoSrc="https://www.youtube.com/watch?v=n8JzMkoD_FU"
                         onInnerClose={() => setProgress(progress + 1)}
@@ -37,9 +46,17 @@ const Section2 = () => {
 
             case 3:
                 return (
+                    <ContentText
+                        text="Tak už známe jméno našeho průvodce, který je zároveň zaměstnancem v této budově, Milan Marek, bylo by dobré si toto jméno zapamatovat! Teď tě čeká nekonečná cesta po schodech, buď po cestě ale pozorný/á, abys nepřehlédl další QR kód!"
+                        onInnerClose={() => setProgress(progress + 1)}
+                    />
+                )
+
+            case 4:
+                return (
                     <ContentImage
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078287085661868032/Pozice-2.jpg?width=704&height=330"
                     />
                 )
 

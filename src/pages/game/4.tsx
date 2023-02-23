@@ -6,6 +6,7 @@ import Router from "next/router";
 import NextButton from "@/components/molecules/NextButton";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
+import ContentText from "@/components/molecules/ContentText";
 
 const Section4 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -30,17 +31,17 @@ const Section4 = () => {
 
             case 1:
                 return (
-                    <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
+                    <ContentText
+                        text="Další schody už tě dneska nečekají… budova je dneska v celku prázdná, možná kvůli ohlášené kontrole našeho detektiva?"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
 
             case 2:
                 return (
-                    <ContentImage
+                    <ContentVideo
+                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
                         onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://via.placeholder.com/300"
                     />
                 )
 
@@ -48,7 +49,7 @@ const Section4 = () => {
                 return (
                     <ContentFinal
                         title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 4 kapitolu, klikněte na tlačítko a pokračujte dále"
+                        subtitle="Úspěšně jste dokočili 4 stanoviste, klikněte na tlačítko a pokračujte dále"
                         onInnerClose={nextGame}
                     />
                 )
