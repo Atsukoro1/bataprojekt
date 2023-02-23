@@ -20,16 +20,12 @@ export default ({ providers }: InferGetServerSidePropsType<typeof getServerSideP
           </p>
           
           <div className="flex flex-row gap-3">
-            {Object.values(providers).map((provider) => (
-              <div key={provider.name}>
-                <button 
-                  className="flex flex-row gap-2 bg-slate-600 text-white p-3 rounded-lg" 
-                  onClick={() => signIn(provider.id)}
-                >
-                  Přihlaš se před {provider.name}
-                </button>
-              </div>
-            ))}
+            <button 
+              className="flex flex-row gap-2 bg-slate-600 text-white p-3 rounded-lg" 
+              onClick={() => signIn("discord")}
+            >
+              Přihlaš se před Discord
+            </button>
           </div>
 				</div>
 			</main>
