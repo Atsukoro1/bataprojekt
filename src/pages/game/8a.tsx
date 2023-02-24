@@ -39,7 +39,7 @@ const Section4 = () => {
             case 2:
                 return (
                     <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=1m92LSrvi3k"
+                        videoSrc="https://www.youtube.com/watch?v=-YNIdIh4GUE"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
