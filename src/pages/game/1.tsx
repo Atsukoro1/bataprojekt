@@ -34,7 +34,7 @@ const Section1 = () => {
                 return (
                     <ContentVideo
                         videoSrc="https://www.youtube.com/watch?v=RiMEmref0rk"
-                        onInnerClose={() => setProgress(progress + 1)}
+                        onInnerClose={nextGame}
                     />
                 )
         }
