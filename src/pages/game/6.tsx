@@ -22,7 +22,7 @@ const Section4 = () => {
                 return (
                     <QrCodeScanner
                         questNumber={6}
-                        subtitle="Naskenuj QR kod na šestém stanovišti"
+                        subtitle="Naskenuj QR kod na 6 stanovišti"
                         onResult={() => { setProgress(progress + 1) }}
                         open={true}
                     />
@@ -41,14 +41,6 @@ const Section4 = () => {
                     <ContentVideo
                         videoSrc="https://www.youtube.com/watch?v=EyNRUwMgVFE"
                         onInnerClose={() => setProgress(progress + 1)}
-                    />
-                )
-
-            case 3:
-                return (
-                    <ContentImage
-                        onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078417838647300186/na_konci_6.JPG?width=454&height=605"
                     />
                 )
 

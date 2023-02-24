@@ -20,7 +20,7 @@ const Section1 = () => {
         switch (progress) {
             case 0:
                 return (
-                    <div>
+                    <div className="m-6">
                         <p className="text-white mt-1 mb-1 table w-[300px]">
                             Výborně, úspěšně jsi našel první lokaci!
                             Právě se nacházíš na začátku našeho případu, který dostal na starost detektiv Jonáš Červenka.
@@ -30,19 +30,11 @@ const Section1 = () => {
                     </div>
                 )
 
-            case 1:
+            default:
                 return (
                     <ContentVideo
                         videoSrc="https://www.youtube.com/watch?v=RiMEmref0rk"
                         onInnerClose={() => setProgress(progress + 1)}
-                    />
-                )
-
-            default:
-                return (
-                    <ContentImage
-                        onInnerClose={nextGame}
-                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078414012099866764/Pozice_stanoviste_2.jpg?width=704&height=330"
                     />
                 )
         }
@@ -51,7 +43,7 @@ const Section1 = () => {
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20">
-                <h1 className="text-white text-lg mb-3">Stanoviště 1</h1>
+                <h1 className="text-white text-lg mb-3 ml-5">Stanoviště 1</h1>
 
                 {content}
             </div>

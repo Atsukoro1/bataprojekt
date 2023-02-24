@@ -22,7 +22,7 @@ const Section4 = () => {
                 return (
                     <QrCodeScanner
                         questNumber={8}
-                        subtitle="Naskenuj QR kod na osmem stanovišti"
+                        subtitle="Naskenuj QR kod na 8 stanovišti"
                         onResult={() => { setProgress(progress + 1) }}
                         open={true}
                     />

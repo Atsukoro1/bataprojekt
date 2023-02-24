@@ -20,6 +20,14 @@ const Section2 = () => {
         switch (progress) {
             case 0:
                 return (
+                    <ContentImage
+                        onInnerClose={nextGame}
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078414012099866764/Pozice_stanoviste_2.jpg?width=704&height=330"
+                    />
+                )
+
+            case 1:
+                return (
                     <QrCodeScanner
                         subtitle="Naskenuj QR Kod na 2 stanovišti"
                         questNumber={2}
@@ -28,7 +36,7 @@ const Section2 = () => {
                     />
                 )
 
-            case 1:
+            case 2:
                 return (
                     <ContentText
                         text="Vidím, že tě náš příběh zaujal! Nyní už se nacházíme před samotnou budovou, kde jsme dostali typ na podezřelé. Pojďme se společně nechat provést celou Budovou 44. Snad se dozvíme více informací od našeho průvodce…"
@@ -36,7 +44,7 @@ const Section2 = () => {
                     />
                 )
 
-            case 2:
+            case 3:
                 return (
                     <ContentVideo
                         videoSrc="https://www.youtube.com/watch?v=n8JzMkoD_FU"
@@ -44,19 +52,11 @@ const Section2 = () => {
                     />
                 )
 
-            case 3:
+            case 4:
                 return (
                     <ContentText
                         text="Tak už známe jméno našeho průvodce, který je zároveň zaměstnancem v této budově, Milan Marek, bylo by dobré si toto jméno zapamatovat! Teď tě čeká nekonečná cesta po schodech, buď po cestě ale pozorný/á, abys nepřehlédl další QR kód!"
                         onInnerClose={() => setProgress(progress + 1)}
-                    />
-                )
-
-            case 4:
-                return (
-                    <ContentImage
-                        onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078287085661868032/Pozice-2.jpg?width=704&height=330"
                     />
                 )
 

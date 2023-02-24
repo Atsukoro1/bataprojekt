@@ -25,9 +25,17 @@ const Section10 = () => {
                 return (
                     <QrCodeScanner
                         questNumber={10}
-                        subtitle="Naskenuj QR kod na desátém stanovišti"
+                        subtitle="Naskenuj QR kod na 10 stanovišti"
                         onResult={() => { setProgress(progress + 1) }}
                         open={true}
+                    />
+                )
+
+            case 1:
+                return (
+                    <ContentVideo
+                        videoSrc="https://youtube.com/shorts/YyWCBQvU31k"
+                        onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
 

@@ -21,15 +21,23 @@ const Section4 = () => {
         switch (progress) {
             case 0:
                 return (
+                    <ContentImage
+                        onInnerClose={nextGame}
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078418826556874822/10_2_konce.JPG?width=454&height=605"
+                    />
+                )
+
+            case 1:
+                return (
                     <QrCodeScanner
                         questNumber={4}
-                        subtitle="Naskenuj QR kod na čtvrtém stanovišti"
+                        subtitle="Naskenuj QR kod na 4 stanovišti"
                         onResult={() => { setProgress(progress + 1) }}
                         open={true}
                     />
                 )
 
-            case 1:
+            case 2:
                 return (
                     <ContentText
                         text="Další schody už tě dneska nečekají… budova je dneska v celku prázdná, možná kvůli ohlášené kontrole našeho detektiva?"
@@ -37,7 +45,7 @@ const Section4 = () => {
                     />
                 )
 
-            case 2:
+            case 3:
                 return (
                     <ContentVideo
                         videoSrc="https://www.youtube.com/watch?v=uGS8bH47zjk"

@@ -22,7 +22,7 @@ const Section4 = () => {
                 return (
                     <QrCodeScanner
                         questNumber={5}
-                        subtitle="Naskenuj QR kod na pátém stanovišti"
+                        subtitle="Naskenuj QR kod na 5 stanovišti"
                         onResult={() => { setProgress(progress + 1) }}
                         open={true}
                     />
@@ -48,7 +48,7 @@ const Section4 = () => {
                 return (
                     <ContentFinal
                         title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 4 kapitolu, klikněte na tlačítko a pokračujte dále"
+                        subtitle="Úspěšně jste dokočili 5 kapitolu, klikněte na tlačítko a pokračujte dále"
                         onInnerClose={nextGame}
                     />
                 )

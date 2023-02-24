@@ -36,19 +36,11 @@ const Section3 = () => {
                     />
                 )
 
-            case 2:
+            default:
                 return (
                     <ContentText
                         text="Tak jo, a teď hurá až do pátého patra, kde se nachází další QR kód."
                         onInnerClose={() => setProgress(progress + 1)}
-                    />
-                )
-
-            default:
-                return (
-                    <ContentImage
-                        onInnerClose={nextGame}
-                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078418826556874822/10_2_konce.JPG?width=454&height=605"
                     />
                 )
         }

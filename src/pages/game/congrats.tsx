@@ -8,6 +8,8 @@ const Congrats = () => {
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20">
+                <video src="https://youtube.com/shorts/qJNd9PROTxw"/>
+                
                 <h1 className="text-white text-lg font-bold mb-5">
                     Gratuluji, úspěšně jsi unikl/a vrahovi, ale bylo to jen tak tak! 
                 </h1>
