@@ -21,7 +21,7 @@ const Section2 = () => {
             case 0:
                 return (
                     <ContentImage
-                        onInnerClose={nextGame}
+                        onInnerClose={() => setProgress(progress + 1)}
                         imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078414012099866764/Pozice_stanoviste_2.jpg?width=704&height=330"
                     />
                 )

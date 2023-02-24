@@ -60,10 +60,12 @@ const Section4 = () => {
                         subtitle="Vyberte jednu z možností"
                         choice1Text="Stanoviště 8A"
                         choice2Text="Stanoviště 8B"
-                        onChoice={(num: number) => {
+                        onChoice={async(num: number) => {
                             if(num === 1) {
+                                await bumpStage.mutateAsync();
                                 Router.push("/game/8a");
                             } else {
+                                await bumpStage.mutateAsync();
                                 Router.push("/game/8b")
                             }
                         }}

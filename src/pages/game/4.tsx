@@ -22,7 +22,7 @@ const Section4 = () => {
             case 0:
                 return (
                     <ContentImage
-                        onInnerClose={nextGame}
+                        onInnerClose={() => setProgress(progress + 1)}
                         imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078418826556874822/10_2_konce.JPG?width=454&height=605"
                     />
                 )

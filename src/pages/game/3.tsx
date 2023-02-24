@@ -40,7 +40,7 @@ const Section3 = () => {
                 return (
                     <ContentText
                         text="Tak jo, a teď hurá až do pátého patra, kde se nachází další QR kód."
-                        onInnerClose={() => setProgress(progress + 1)}
+                        onInnerClose={nextGame}
                     />
                 )
         }
