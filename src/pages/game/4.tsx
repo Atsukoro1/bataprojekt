@@ -40,7 +40,7 @@ const Section4 = () => {
             case 2:
                 return (
                     <ContentText
-                        text="Další schody už tě dneska nečekají… budova je dneska v celku prázdná, možná kvůli ohlášené kontrole našeho detektiva?"
+                        text="Další schody už tě dneska nečekají… budova je dneska v celku prázdná, možná kvůli ohlášené kontrole našeho detektiva?"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
@@ -48,7 +48,7 @@ const Section4 = () => {
             case 3:
                 return (
                     <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=uGS8bH47zjk"
+                        videoSrc="https://www.youtube.com/shorts/Bep7TojBuAE"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
@@ -57,7 +57,7 @@ const Section4 = () => {
                 return (
                     <ContentFinal
                         title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 4 stanoviste, klikněte na tlačítko a pokračujte dále"
+                        subtitle="Úspěšně jste dokočili 4 stanoviste, klikněte na tlačítko a pokračujte dále."
                         onInnerClose={nextGame}
                     />
                 )
@@ -66,7 +66,7 @@ const Section4 = () => {
 
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
-            <div className="mt-20">
+            <div className="mt-20 p-6">
                 <h1 className="text-white text-lg mb-3">Stanoviště 4</h1>
 
                 {content}

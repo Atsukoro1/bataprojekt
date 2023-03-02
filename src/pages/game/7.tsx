@@ -2,7 +2,6 @@ import ContentVideo from "@/components/molecules/ContentVideo";
 import QrCodeScanner from "@/components/organisms/QrCodeScanner";
 import { useMemo, useState } from "react";
 import Router from "next/router";
-import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
 import ContentImage from "@/components/molecules/ContentImage";
 import ContentChoices from "@/components/molecules/ContentChoices";
@@ -11,11 +10,6 @@ import ContentText from "@/components/molecules/ContentText";
 const Section4 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
     const [progress, setProgress] = useState<number>(0);
-
-    const nextGame = async () => {
-        await bumpStage.mutateAsync();
-        await Router.push("/game/8");
-    };
 
     const content = useMemo(() => {
         switch (progress) {
@@ -48,7 +42,7 @@ const Section4 = () => {
             case 3:
                 return (
                     <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=2v_oAKiJmAk"
+                        videoSrc="https://www.youtube.com/shorts/4S0yzH7NvGM"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
@@ -58,8 +52,8 @@ const Section4 = () => {
                     <ContentChoices
                         title="Máte na výběr"
                         subtitle="Vyberte jednu z možností"
-                        choice1Text="Stanoviště 8A"
-                        choice2Text="Stanoviště 8B"
+                        choice1Text="UTÉCT"
+                        choice2Text="POKRAČOVAT"
                         onChoice={async(num: number) => {
                             if(num === 1) {
                                 await bumpStage.mutateAsync();
@@ -76,7 +70,7 @@ const Section4 = () => {
 
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
-            <div className="mt-20">
+            <div className="mt-20 p-6">
                 <h1 className="text-white text-lg mb-3">Stanoviště 7</h1>
                 
                 {content}

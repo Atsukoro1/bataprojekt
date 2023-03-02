@@ -31,7 +31,7 @@ const Section3 = () => {
             case 1:
                 return (
                     <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=hce1J2JWT04"
+                        videoSrc="https://www.youtube.com/shorts/NrvYK8NIrFQ"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
@@ -48,7 +48,7 @@ const Section3 = () => {
 
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
-            <div className="mt-20">
+            <div className="mt-20 p-6">
                 <h1 className="text-white text-lg mb-3">Stanoviště 3</h1>
 
                 {content}

@@ -15,14 +15,14 @@ const LeaderboardItem = ({
 	time,
 }: LeaderboardItemProps) => {
 	return (
-		<div className="flex items-center p-4 bg-slate-900 rounded-lg shadow-sm">
+		<div className="flex items-center p-4 bg-slate-900 rounded-lg mx-auto w-[90%] shadow-sm">
 			<div
 				className={"text-slate-400 w-5 text-lg font-medium"}
 			>
 				{`#${place}`}
 			</div>
 
-			<div className="flex items-center ml-4">
+			<div className="flex items-center flex-row ml-4">
 				<div className="w-12 h-12 overflow-hidden rounded-full">
 					<Image
 						src={{
@@ -35,9 +35,16 @@ const LeaderboardItem = ({
 						height={48}
 					/>
 				</div>
-				<div className="ml-4 text-white font-bold">{username}</div>
 
-				<label className='text-slate-300 ml-[70px]'>
+				<div className="ml-4 text-white font-bold">
+					{username.length > 20 ? (
+						`${username.substring(0,20)}...`
+					) : (
+						username
+					)}
+				</div>
+
+				<label className='text-slate-300 w-fit ml-[20px]'>
 					{convertMsToTime(time)}
 				</label>
 			</div>

@@ -21,6 +21,14 @@ const Section9 = () => {
         switch (progress) {
             case 0:
                 return (
+                    <ContentImage
+                        onInnerClose={() => setProgress(progress + 1)}
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078419513101516850/9.JPG?width=454&height=605"
+                    />
+                )
+
+            case 1:
+                return (
                     <QrCodeScanner
                         questNumber={9}
                         subtitle="Naskenuj QR kod na 9 stanovišti"
@@ -29,7 +37,7 @@ const Section9 = () => {
                     />
                 )
 
-            case 1:
+            case 2:
                 return (
                     <ContentText
                         text="Hm… už tě napadá kdo by mohl být vrahem Pana Potopy?"
@@ -37,7 +45,7 @@ const Section9 = () => {
                     />
                 )
 
-            case 2:
+            case 3:
                 return (
                     <ContentVideo
                         videoSrc="https://www.youtube.com/watch?v=ez8GHqyr8SA"
@@ -45,28 +53,11 @@ const Section9 = () => {
                     />
                 )
 
-            case 3:
-                return (
-                    <ContentText
-                        text="Tak to nikdo nemohl čekat! Měl/a by jsi co nejrychleji najít poslední stanoviště, abys mohl/a z budovy uniknout! "
-                        onInnerClose={() => setProgress(progress + 1)}
-                    />
-                )
-
-            case 4:
-                return (
-                    <ContentImage
-                        onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078427173049880586/na_kocni_9.JPG?width=454&height=605"
-                    />
-                )
-
             default:
                 return (
-                    <ContentFinal
-                        title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 9 stanoviste, klikněte na tlačítko a pokračujte dále"
-                        onInnerClose={nextGame}
+                    <ContentText
+                        text="Tak to nikdo nemohl čekat! Měl/a by jsi co nejrychleji najít poslední stanoviště, abys mohl/a z budovy uniknout! "
+                        onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
         }
@@ -74,7 +65,7 @@ const Section9 = () => {
 
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
-            <div className="mt-20">
+            <div className="mt-20 p-6">
                 <h1 className="text-white text-lg mb-3">Stanoviště 9</h1>
 
                 {content}

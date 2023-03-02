@@ -14,7 +14,7 @@ const ContentVideo = ({
         <div>
             <ReactPlayer
                 url={videoSrc}
-                controls={false}
+                controls={true}
                 playing={true}
                 width={340}
                 height={420}

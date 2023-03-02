@@ -18,7 +18,7 @@ const ContentChoices = ({
             <h1 className="text-white text-xl">{title}</h1>
             <p className="text-white text-md">{subtitle}</p>
 
-            <div className="flex flex-grow gap-2">
+            <div className="flex flex-grow gap-2 mt-4">
                 <button 
                     onClick={() => onChoice(1)}
                     className="bg-slate-400 p-2 rounded-lg"

@@ -12,7 +12,7 @@ const LeaderboardPage = ({ scores }: {
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20 items-center text-center">
                 <h1 className="text-white font-bold text-3xl">Žebříček</h1>
-                <p className="text-white table w-[350px] text-center">
+                <p className="text-white table w-[300px] mx-auto text-center">
                     Žebříček zobrazuje nejlepší skóre za celou životnost aplikace
                 </p>
 

@@ -8,7 +8,7 @@ const Congrats = () => {
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20">
-                <video src="https://youtube.com/shorts/qJNd9PROTxw"/>
+                <video src="https://www.youtube.com/shorts/vRM1LPdXEbs"/>
                 
                 <h1 className="text-white text-lg font-bold mb-5">
                     Gratuluji, úspěšně jsi unikl/a vrahovi, ale bylo to jen tak tak! 
@@ -18,7 +18,7 @@ const Congrats = () => {
                     className="bg-slate-200 p-4 rounded-lg mt-4"
                     onClick={backToMenu}
                 >
-                    Zpatky do menu
+                    Zpátky do menu
                 </button>
             </div>
         </main>

@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Router from "next/router";
 import { api } from "@/utils/api";
 import ContentGame from "@/components/molecules/ContentGame";
+import ContentImage from "@/components/molecules/ContentImage";
 
 const Section10 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -23,6 +24,14 @@ const Section10 = () => {
         switch (progress) {
             case 0:
                 return (
+                    <ContentImage
+                        onInnerClose={() => setProgress(progress + 1)}
+                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078427173049880586/na_kocni_9.JPG?width=454&height=605"
+                    />
+                )
+
+            case 1:
+                return (
                     <QrCodeScanner
                         questNumber={10}
                         subtitle="Naskenuj QR kod na 10 stanovišti"
@@ -31,10 +40,10 @@ const Section10 = () => {
                     />
                 )
 
-            case 1:
+            case 2:
                 return (
                     <ContentVideo
-                        videoSrc="https://youtube.com/shorts/YyWCBQvU31k"
+                        videoSrc="https://www.youtube.com/shorts/OAeaOHJ2vzo"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
@@ -57,7 +66,7 @@ const Section10 = () => {
 
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
-            <div className="mt-20">
+            <div className="mt-20 p-6">
                 <h1 className="text-white text-lg mb-3">Stanoviště 10</h1>
 
                 {content}

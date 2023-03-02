@@ -33,7 +33,7 @@ const Section1 = () => {
             default:
                 return (
                     <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=RiMEmref0rk"
+                        videoSrc="https://www.youtube.com/shorts/RrQ_8zVoFxU"
                         onInnerClose={nextGame}
                     />
                 )
@@ -42,7 +42,7 @@ const Section1 = () => {
 
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
-            <div className="mt-20">
+            <div className="mt-20 p-6">
                 <h1 className="text-white text-lg mb-3 ml-5">Stanoviště 1</h1>
 
                 {content}

@@ -47,7 +47,7 @@ const Section2 = () => {
             case 3:
                 return (
                     <ContentVideo
-                        videoSrc="https://www.youtube.com/watch?v=n8JzMkoD_FU"
+                        videoSrc="https://www.youtube.com/shorts/Gy6NHNkA5wI"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
@@ -55,7 +55,7 @@ const Section2 = () => {
             case 4:
                 return (
                     <ContentText
-                        text="Tak už známe jméno našeho průvodce, který je zároveň zaměstnancem v této budově, Milan Marek, bylo by dobré si toto jméno zapamatovat! Teď tě čeká nekonečná cesta po schodech, buď po cestě ale pozorný/á, abys nepřehlédl další QR kód!"
+                        text="Tak už známe jméno našeho průvodce, který je zároveň zaměstnancem v této budově, Milan Marek, bylo by dobré si toto jméno zapamatovat! Teď tě čeká nekonečná cesta po schodech, buď po cestě ale pozorný/á, abys nepřehlédl další QR kód!"
                         onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
@@ -64,7 +64,7 @@ const Section2 = () => {
                 return (
                     <ContentFinal
                         title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili druhou kapitolu, klikněte na tlačítko a pokračujte dále"
+                        subtitle="Úspěšně jste dokočili druhou kapitolu, klikněte na tlačítko a pokračujte dále."
                         onInnerClose={nextGame}
                     />
                 )
@@ -73,7 +73,7 @@ const Section2 = () => {
 
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
-            <div className="mt-20">
+            <div className="mt-20 p-6">
                 <h1 className="text-white text-lg mb-3">Stanoviště 2</h1>
 
                 {content}

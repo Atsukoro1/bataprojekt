@@ -8,7 +8,7 @@ const GameOver = () => {
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
             <div className="mt-20">
-                <video src="https://youtube.com/shorts/we3TdxFRgCY"/>
+                <video src="https://www.youtube.com/shorts/20nSNuPr5YM"/>
                 
 
                 <h1 className="text-white text-lg font-bold mb-5">

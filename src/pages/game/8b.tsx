@@ -28,28 +28,11 @@ const Section4 = () => {
                     />
                 )
 
-            case 1:
-                return (
-                    <ContentText
-                        text="Hm… vypadá to, že kancelář je zamknutá. Bohužel jsi se zdržel/a a k tvému finálnímu času musíme přičíst + 2 minuty. Nezbývá ti nic jiného, než se vydat hledat další stanoviště. "
-                        onInnerClose={() => setProgress(progress + 1)}
-                    />
-                )
-
-            case 2:
-                return (
-                    <ContentImage
-                        onInnerClose={() => setProgress(progress + 1)}
-                        imageSrc="https://media.discordapp.net/attachments/1078260004370522194/1078419513101516850/9.JPG?width=454&height=605"
-                    />
-                )
-
             default:
                 return (
-                    <ContentFinal
-                        title="Gratulujeme"
-                        subtitle="Úspěšně jste dokočili 8 kapitolu, klikněte na tlačítko a pokračujte dále"
-                        onInnerClose={nextGame}
+                    <ContentText
+                        text="Hm… vypadá to, že kancelář je zamknutá. Bohužel jsi se zdržel/a a k tvému finálnímu času musíme přičíst + 2 minuty. Nezbývá ti nic jiného, než se vydat hledat další stanoviště. "
+                        onInnerClose={() => setProgress(progress + 1)}
                     />
                 )
         }
@@ -57,7 +40,7 @@ const Section4 = () => {
 
     return (
         <main className="flex min-h-screen flex-col items-center bg-slate-800">
-            <div className="mt-20">
+            <div className="mt-20 p-6">
                 <h1 className="text-white text-lg mb-3">Stanoviště 8</h1>
 
                 {content}
