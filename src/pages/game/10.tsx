@@ -9,6 +9,8 @@ import ContentInput from "@/components/molecules/ContentInput";
 
 const Section10 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
+    const removeStage = api.gameSession.removeSession.useMutation();
+
     const [progress, setProgress] = useState<number>(0);
 
     const nextGame = async () => {
@@ -17,7 +19,7 @@ const Section10 = () => {
     };
 
     const failGame = async () => {
-        await bumpStage.mutateAsync();
+        await removeStage.mutateAsync();
         await Router.push("/game/gameover");
     }
 
