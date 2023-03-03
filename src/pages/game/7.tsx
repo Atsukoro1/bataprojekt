@@ -60,7 +60,7 @@ const Section4 = () => {
                                 Router.push("/game/8a");
                             } else {
                                 await bumpStage.mutateAsync();
-                                Router.push("/game/8b")
+                                Router.push("/game/9")
                             }
                         }}
                     />

@@ -5,6 +5,7 @@ import Router from "next/router";
 import { api } from "@/utils/api";
 import ContentGame from "@/components/molecules/ContentGame";
 import ContentImage from "@/components/molecules/ContentImage";
+import ContentInput from "@/components/molecules/ContentInput";
 
 const Section10 = () => {
     const bumpStage = api.gameSession.bumpStage.useMutation();
@@ -48,7 +49,7 @@ const Section10 = () => {
                     />
                 )
 
-            default:
+            case 3:
                 return (
                     <ContentGame
                         title="Rychle si vzpomeň na velikost boty  našeho detektiva a dané číslo zadej tak, aby vycházelo na 9 políček."
@@ -56,9 +57,17 @@ const Section10 = () => {
                         dataUrl="/games/keypair/thing.data"
                         frameworkUrl="/games/keypair/thing.framework.js"
                         codeUrl="/games/keypair/thing.wasm"
-                        code="elpoepyagevoli"
-                        onFail={failGame}
+                        onSuccess={() => setProgress(progress + 1)}
+                    />
+                )
+
+            default:
+                return (
+                    <ContentInput
+                        title="Zadej kód ze hry"
+                        choice="elpoepyagevoli"
                         onSuccess={nextGame}
+                        onFail={failGame}
                     />
                 )
         }

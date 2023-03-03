@@ -7,9 +7,7 @@ type ContentGameProps = {
     dataUrl: string;
     frameworkUrl: string;
     codeUrl: string;
-    code: string;
     onSuccess: () => void;
-    onFail: () => void;
 }
 
 const ContentGame = ({
@@ -18,11 +16,9 @@ const ContentGame = ({
     dataUrl,
     frameworkUrl,
     codeUrl,
-    code,
-    onSuccess,
-    onFail
+    onSuccess
 }: ContentGameProps) => {
-    const { unityProvider } = useUnityContext({
+    const { unityProvider, unload } = useUnityContext({
         loaderUrl: loaderUrl,
         dataUrl: dataUrl,
         frameworkUrl: frameworkUrl,
@@ -40,7 +36,10 @@ const ContentGame = ({
 
             <button
                 className="bg-slate-400 p-3 rounded-lg text-white mt-3"
-                onClick={onSuccess}
+                onClick={async() => {
+                    await unload();
+                    onSuccess();
+                }}
             >
                 Hotovo
             </button>

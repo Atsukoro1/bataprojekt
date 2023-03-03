@@ -4,16 +4,15 @@ import { useMemo, useState } from "react";
 import Router from "next/router";
 import ContentFinal from "@/components/molecules/ContentFinal";
 import { api } from "@/utils/api";
-import ContentImage from "@/components/molecules/ContentImage";
 import ContentText from "@/components/molecules/ContentText";
 
 const Section4 = () => {
-    const dumpStage = api.gameSession.dumpStage.useMutation();
+    const removeStage = api.gameSession.removeSession.useMutation();
     const [progress, setProgress] = useState<number>(0);
 
-    const previousGame = async () => {
-        await dumpStage.mutateAsync();
-        await Router.push("/game/7");
+    const quitGame = async () => {
+        await removeStage.mutateAsync();
+        await Router.push("/");
     };
 
     const content = useMemo(() => {
@@ -48,8 +47,8 @@ const Section4 = () => {
                 return (
                     <ContentFinal
                         title="Neúspěch"
-                        subtitle="Dáme ti ještě jednu šanci!"
-                        onInnerClose={previousGame}
+                        subtitle="Ukončit hru!"
+                        onInnerClose={quitGame}
                     />
                 )
         }
